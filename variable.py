@@ -77,3 +77,23 @@ def addition():
 
 addition()
 print("global keyword test a = ",a)
+
+# Constance
+# no special keyword
+# mutable constance(just naming convention to saw it constance)
+PI = 3.14
+
+#immutable constance
+from collections import namedtuple
+const = namedtuple("const",["PI"])
+math = const(3.14)
+print("namedtuple PI = ",math.PI)
+print("namedtuple type =",type(math))
+#constance.PI = 3.0 #AttributeError can't set attribute error
+
+# Explicit data type hints
+def area_of_circle(radius :float) -> float:
+    PI :float = 3.14
+    return PI * (radius * radius)
+
+print("explicit type hint calculate area of circle = ",area_of_circle(2))
