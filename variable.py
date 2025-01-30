@@ -97,3 +97,54 @@ def area_of_circle(radius :float) -> float:
     return PI * (radius * radius)
 
 print("explicit type hint calculate area of circle = ",area_of_circle(2))
+
+# Other data types
+# Range
+print("test range type")
+a = range(3)
+
+for i in a:
+    print("i = ",i)
+print(type(a))
+
+# Frozenset - set and immutable behaviour
+simple_list = [1,2,3,1]
+test_frozenset = frozenset(simple_list)
+#print(test_frozenset[0]) #show TypeError object not subscriptable
+for i in test_frozenset:
+    print("frozen set item :",i)
+
+# Number complex
+n = 3+5j
+print("complex example :",n);
+print("complex type print : ",type(n))
+#casting
+print("casting complex type :",complex(1))
+
+
+# memoryview - this function efficient to access binary datatype and process largedataset audio,video,images
+# memoryview function realtime usecase networking or image processing
+# Bytes
+# immutable property
+b1 = bytes([1,2,3,4])
+bo = memoryview(b1)
+
+print("byte example :",b1[0])
+print("memoryview   :",bo[0:2])
+print("memoryview datatype :",type(bo))
+# b1[0] += 10 #thow TypeError
+
+# ByteArray
+# mutable property
+b2 = bytearray(b"aaaa")
+bo = memoryview(b2)
+print("byte array example :",b2)
+bo[1] = 98
+bo[2] = 99
+bo[3] = 100
+print("byte array example :",b2);
+
+# None
+name = None;
+print("None example :",name)
+print("type of None :",type(name))
